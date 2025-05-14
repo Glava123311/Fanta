@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>FANTA</title>
+    <style>
+        body {
+            background-color: orange;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        img {
+            width: 300px;
+            margin: 20px;
+        }
+
+        a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: white;
+            color: orange;
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: white;
+            color: orange;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px;
+            width: 150px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+
+        .converter {
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function changeText() {
+            document.getElementById("text").innerText = "Fanta macht Spaß! 🍊";
+        }
+
+        // Umrechnungsfunktion für Kilometer in Meilen und umgekehrt
+        function convertDistance() {
+            let km = parseFloat(document.getElementById("km").value);
+            let miles = parseFloat(document.getElementById("miles").value);
+            if (km) {
+                document.getElementById("milesResult").innerText = (km * 0.621371).toFixed(2) + " Meilen";
+            }
+            if (miles) {
+                document.getElementById("kmResult").innerText = (miles / 0.621371).toFixed(2) + " Kilometer";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>FANTA</h1>
+    <h2>Spritzig. Fruchtig. Fanta!</h2>
+
+    <img src="https://wallpaperbat.com/img/1511671-fanta-logo-design-history-evolution.jpg" alt="Fanta Logo">
+
+    <br>
+    <a href="https://www.interspar.at/shop/lebensmittel/fanta-orange/p/2020004742872" target="_blank">
+        Fanta bei Interspar
+    </a>
+
+    <br><br>
+    <button onclick="changeText()">Klick mich</button>
+    <p id="text">Hier steht noch nichts ...</p>
+
+
+    <!-- Umrechner Bereich -->
+    <div class="converter">
+        <h3>Entfernung Umrechner:</h3>
+        <input type="number" id="km" placeholder="Kilometer" oninput="convertDistance()">
+        <span>→</span>
+        <span id="milesResult">Meilen</span>
+
+        <br><br>
+
+        <input type="number" id="miles" placeholder="Meilen" oninput="convertDistance()">
+        <span>→</span>
+        <span id="kmResult">Kilometer</span>
+    </div>
+
+    <footer>
+        <p>Erstellt von Nico Glavanits</p>
+        <p>HTL Eisenstadt</p>
+        <p>nico.glavanits@gmail.com</p>
+    </footer>
+
+</body>
+</html>
+
